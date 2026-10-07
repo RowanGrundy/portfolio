@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+html,body{overflow-x:clip}
+body{margin:0;-webkit-font-smoothing:antialiased;transition:background .3s}
+a{color:inherit;text-decoration:none;cursor:pointer}
+a:hover{opacity:.75}
+button{font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="min-height:100vh;background:var(--bg,#fafaf9);color:var(--ink,#111);transition:background .3s,color .3s;padding-bottom:96px">
+
+<!-- ============ 3a SWISS FEATURE ============ -->
+<sc-if value="{{ isK }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="3a Swiss feature" style="font-family:'Geist',sans-serif;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px)">
+<div style="display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;padding:24px 0;font-size:15px">
+<a onClick="{{ goHome }}" style="display:flex;gap:10px;align-items:baseline"><span style="font-weight:600">Rowan Grundy</span><span style="color:var(--mute,#666)">UX designer</span></a>
+<div style="display:flex;gap:20px;align-items:center"><a onClick="{{ goHome }}" style="opacity:{{ opWork }}">Work</a><a onClick="{{ goAbout }}" style="opacity:{{ opAbout }}">About</a><a href="{{ cv }}" target="_blank" style="border:1px solid var(--ink,#111);padding:8px 14px">CV ↗</a><button onClick="{{ toggleDark }}" aria-label="{{ darkAria }}" title="{{ darkAria }}" style="width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line,#e6e5e2);background:transparent;color:inherit;padding:0;cursor:pointer;transition:border-color .2s" style-hover="{&quot;borderColor&quot;:&quot;var(--ink,#111)&quot;}"><sc-if value="{{ dark }}" hint-placeholder-val="{{ true }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"></path></svg></sc-if><sc-if value="{{ light }}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg></sc-if></button></div></div>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<div style="position:sticky;top:0;z-index:0;padding:clamp(48px,9vw,128px) 0 clamp(48px,6vw,80px);display:flex;flex-direction:column;gap:clamp(24px,4vw,48px)">
+<span style="display:flex;gap:8px;align-items:center;font-size:14px;color:var(--mute,#666)"><span style="width:8px;height:8px;background:var(--acc,#c33)"></span>UX Designer at AVAMAE Software Solutions</span>
+<div style="display:flex;flex-wrap:wrap;gap:32px clamp(32px,5vw,72px);align-items:flex-end;justify-content:space-between">
+<h1 style="flex:2 1 460px;margin:0;max-width:16ch;font-size:clamp(38px,7vw,104px);line-height:.96;font-weight:500;letter-spacing:-.04em;text-wrap:balance">{{ heroPre }}<em style="font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1em;line-height:0;letter-spacing:-.02em;color:var(--acc,#c33)">{{ heroW1 }}</em>{{ heroMid }}<em style="font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1em;line-height:0;letter-spacing:-.02em;color:var(--acc,#c33)">{{ heroW2 }}</em>{{ heroPost }}</h1>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:flex-end">
+<p style="flex:1 1 320px;max-width:480px;margin:0;font-size:clamp(17px,1.6vw,19px);line-height:1.55;color:var(--mute,#666)">I’m Rowan, a UX Designer at AVAMAE Software Solutions. This site is a collection of my work.</p>
+<div style="display:flex;gap:clamp(24px,4vw,56px)">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:clamp(28px,3vw,40px);font-weight:500;letter-spacing:-.03em">4 yrs</span><span style="font-size:13px;color:var(--mute,#666)">Experience</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:clamp(28px,3vw,40px);font-weight:500;letter-spacing:-.03em">25+</span><span style="font-size:13px;color:var(--mute,#666)">Projects</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:clamp(28px,3vw,40px);font-weight:500;letter-spacing:-.03em">5</span><span style="font-size:13px;color:var(--mute,#666)">Sectors</span></div></div></div></div>
+<div style="position:relative;z-index:1;background:var(--bg,#fafaf8);margin:0 calc(-1 * clamp(20px,4vw,56px));padding:0 clamp(20px,4vw,56px)">
+<div style="border-top:1px solid var(--ink,#111);padding:16px 0;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center">
+<span style="font-size:15px;font-weight:600">Projects <span style="color:var(--mute,#666);font-weight:400">({{ fCount }})</span></span>
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<sc-for list="{{ filters }}" as="c" hint-placeholder-count="5"><button onClick="{{ c.pick }}" style="border:1px solid var(--line,#e6e5e2);background:{{ c.bg }};color:{{ c.fg }};padding:7px 14px;font-size:14px;transition:background .2s">{{ c.label }}</button></sc-for></div></div>
+<a onClick="{{ feat.open }}" style="display:flex;flex-wrap:wrap;gap:24px clamp(24px,4vw,56px);padding:24px 0 56px;align-items:flex-end">
+<div style="flex:2 1 520px;min-width:0;aspect-ratio:16/10;background:var(--surf,#ecebe8);overflow:hidden"><img src="{{ feat.img }}" alt="{{ feat.name }}" style="width:100%;height:100%;object-fit:{{ feat.fit }};padding:{{ feat.pad }};box-sizing:border-box;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="{&quot;transform&quot;:&quot;scale(1.03)&quot;}"></div>
+<div style="flex:1 1 280px;display:flex;flex-direction:column;gap:14px">
+<span style="font-size:14px;color:var(--acc,#c33)">{{ feat.n }} · Featured</span>
+<span style="font-size:clamp(28px,3vw,40px);font-weight:500;letter-spacing:-.03em;line-height:1.05">{{ feat.name }}</span>
+<p style="margin:0;font-size:16px;line-height:1.55;color:var(--mute,#666);text-wrap:pretty">{{ feat.desc }}</p>
+<span style="font-size:13px;color:var(--mute,#666)">{{ feat.tag }} · {{ feat.role }}, {{ feat.year }}</span>
+<span style="font-size:15px;font-weight:500">View case study →</span></div></a>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:48px 24px;padding-bottom:120px">
+<sc-for list="{{ featRest }}" as="p" hint-placeholder-count="6">
+<a onClick="{{ p.open }}" style="display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--line,#e6e5e2);padding-top:16px">
+<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--mute,#666)"><span style="color:var(--acc,#c33)">{{ p.n }}</span><span>{{ p.year }}</span></div>
+<div style="aspect-ratio:4/3;background:var(--surf,#ecebe8);overflow:hidden"><img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%;height:100%;object-fit:{{ p.fit }};padding:{{ p.pad }};box-sizing:border-box;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)" style-hover="{&quot;transform&quot;:&quot;scale(1.04)&quot;}"></div>
+<span style="font-size:20px;font-weight:600;letter-spacing:-.01em">{{ p.name }}</span>
+<p style="margin:0;font-size:15px;line-height:1.5;color:var(--mute,#666);text-wrap:pretty">{{ p.desc }}</p>
+<span style="font-size:13px;color:var(--mute,#666)">{{ p.tag }}</span></a></sc-for></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<h1 style="position:sticky;top:0;z-index:0;margin:0;padding:clamp(48px,8vw,112px) 0 clamp(32px,4vw,56px);font-size:clamp(40px,8vw,120px);font-weight:500;letter-spacing:-.045em;line-height:.94">Nice to meet you. I’m <em style="font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:1em;line-height:0;letter-spacing:-.02em;color:var(--acc,#c33)">Rowan</em>.</h1>
+<div style="position:relative;z-index:1;background:var(--bg,#fafaf8);margin:0 calc(-1 * clamp(20px,4vw,56px));padding:0 clamp(20px,4vw,56px)">
+<div style="display:flex;flex-wrap:wrap;gap:40px clamp(32px,5vw,80px);border-top:1px solid var(--ink,#111);padding-top:32px;align-items:flex-start">
+<div style="flex:1 1 280px;max-width:440px;aspect-ratio:4/5;background:var(--surf,#ecebe8);overflow:hidden"><img src="{{ photo }}" alt="Rowan Grundy" style="width:100%;height:100%;object-fit:cover"></div>
+<div style="flex:2 1 360px;display:flex;flex-direction:column;gap:22px">
+<div style="font-size:clamp(20px,2vw,26px);letter-spacing:-.015em">I am a UX designer with a passion for problem solving</div>
+<sc-for list="{{ about }}" as="para" hint-placeholder-count="3"><p style="margin:0;font-size:16px;line-height:1.7;color:var(--mute,#666);text-wrap:pretty">{{ para }}</p></sc-for></div></div>
+<div style="padding:clamp(64px,8vw,112px) 0">
+<span style="font-size:15px;font-weight:600">Experience</span>
+<div style="display:flex;flex-direction:column;margin-top:24px;border-top:1px solid var(--ink,#111)">
+<sc-for list="{{ timeline }}" as="t" hint-placeholder-count="4">
+<div style="display:flex;flex-wrap:wrap;gap:6px 24px;padding:22px 0;border-bottom:1px solid var(--line,#e6e5e2);align-items:baseline"><span style="flex:0 0 32px;font-size:13px;color:var(--acc,#c33)">{{ t.n }}</span><span style="flex:1 1 220px;font-size:clamp(20px,2vw,24px);font-weight:500;letter-spacing:-.02em">{{ t.what }}</span><span style="flex:1 1 200px;font-size:15px"><span style="opacity:.45">{{ t.wherePast }}</span>{{ t.where }}</span><span style="flex:0 1 140px;font-size:14px;color:var(--mute,#666)">{{ t.when }}</span></div></sc-for></div></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isCase }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-wrap:wrap;gap:40px clamp(32px,5vw,72px);padding:clamp(40px,6vw,80px) 0;align-items:flex-start">
+<aside style="flex:1 1 260px;position:sticky;top:24px;display:flex;flex-direction:column;gap:24px">
+<a onClick="{{ goHome }}" style="font-size:14px;color:var(--mute,#666)">← All projects</a>
+<h1 style="margin:0;font-size:clamp(32px,3.6vw,52px);font-weight:500;letter-spacing:-.035em;line-height:1">{{ cp.name }}</h1>
+<div style="display:flex;flex-direction:column;border-top:1px solid var(--ink,#111);font-size:14px">
+<div style="display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line,#e6e5e2)"><span style="color:var(--mute,#666)">Role</span><span>{{ cp.role }}</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line,#e6e5e2)"><span style="color:var(--mute,#666)">Year</span><span>{{ cp.year }}</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line,#e6e5e2)"><span style="color:var(--mute,#666)">Sector</span><span>{{ cp.tag }}</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line,#e6e5e2)"><span style="color:var(--mute,#666)">Company</span><span style="text-align:right">{{ cp.company }}</span></div></div></aside>
+<div style="flex:3 1 560px;min-width:0;display:flex;flex-direction:column;gap:56px">
+<div style="aspect-ratio:16/10;background:var(--surf,#ecebe8);overflow:hidden"><img onClick="{{ openHero }}" src="{{ cp.img }}" alt="{{ cp.name }}" style="cursor:zoom-in;width:100%;height:100%;object-fit:{{ cp.fit }};padding:{{ cp.pad }};box-sizing:border-box;display:block"></div>
+<p style="margin:0;font-size:clamp(22px,2.4vw,30px);line-height:1.3;letter-spacing:-.015em;text-wrap:pretty">{{ cp.desc }}</p>
+<sc-for list="{{ caseSections }}" as="s" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:20px;border-top:1px solid var(--line,#e6e5e2);padding-top:20px"><span style="font-size:15px;font-weight:600"><span style="color:var(--acc,#c33)">{{ s.n }}</span>  {{ s.k }}</span>
+<sc-if value="{{ s.real }}" hint-placeholder-val="{{ false }}"><p style="margin:0;max-width:62ch;font-size:17px;line-height:1.65;color:var(--mute,#666);text-wrap:pretty">{{ s.h }}</p></sc-if>
+<sc-if value="{{ s.ph }}" hint-placeholder-val="{{ true }}"><p style="margin:0;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--mute,#666);border:1px dashed var(--line,#e6e5e2);padding:16px">{{ s.h }}</p></sc-if>
+<sc-if value="{{ s.hasSteps }}" hint-placeholder-val="{{ false }}"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+<sc-for list="{{ s.steps }}" as="st" hint-placeholder-count="4"><div style="display:flex;flex-direction:column;gap:12px;background:var(--surf,#ecebe8);padding:clamp(20px,2.4vw,28px);min-height:200px"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px"><span style="font-size:clamp(20px,2vw,24px);font-weight:500;letter-spacing:-.02em">{{ st.k }}</span><span style="font-size:clamp(36px,4vw,56px);font-weight:500;letter-spacing:-.05em;line-height:.8;color:var(--acc,#c33)">{{ st.n }}</span></div><p style="margin:auto 0 0;font-size:15px;line-height:1.55;color:var(--mute,#666);text-wrap:pretty">{{ st.h }}</p></div></sc-for></div></sc-if>
+<sc-if value="{{ s.hasImgs }}" hint-placeholder-val="{{ false }}"><div onTouchStart="{{ s.ts }}" onTouchEnd="{{ s.te }}" style="position:relative;aspect-ratio:16/10;background:var(--surf,#ecebe8);overflow:hidden"><img onClick="{{ s.zoom }}" src="{{ s.cur }}" alt="{{ s.k }}" style="cursor:zoom-in;width:100%;height:100%;object-fit:contain;padding:3%;box-sizing:border-box;display:block">
+<sc-if value="{{ s.multi }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;right:12px;bottom:12px;display:flex;gap:6px;align-items:center"><span style="background:var(--bg,#fafaf8);padding:0 12px;height:36px;display:flex;align-items:center;font-size:13px;font-variant-numeric:tabular-nums">{{ s.pos }}</span><button onClick="{{ s.prev }}" aria-label="Previous image" style="width:36px;height:36px;border:0;background:var(--bg,#fafaf8);color:inherit;cursor:pointer;font-size:15px" style-hover="{&quot;background&quot;:&quot;var(--acc,#c33)&quot;,&quot;color&quot;:&quot;#fff&quot;}">←</button><button onClick="{{ s.next }}" aria-label="Next image" style="width:36px;height:36px;border:0;background:var(--bg,#fafaf8);color:inherit;cursor:pointer;font-size:15px" style-hover="{&quot;background&quot;:&quot;var(--acc,#c33)&quot;,&quot;color&quot;:&quot;#fff&quot;}">→</button></div></sc-if></div></sc-if>
+<sc-if value="{{ s.ph }}" hint-placeholder-val="{{ true }}"><div style="aspect-ratio:16/9;background:repeating-linear-gradient(135deg,var(--surf,#ecebe8) 0 10px,transparent 10px 20px);border:1px solid var(--line,#e6e5e2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute,#666)">{{ s.img }}</div></sc-if></div></sc-for>
+<a onClick="{{ cp.next }}" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink,#111);padding-top:16px"><span style="font-size:14px;color:var(--mute,#666)">Next project</span><span style="font-size:clamp(24px,3vw,40px);font-weight:500;letter-spacing:-.03em">{{ cp.nextName }} →</span></a></div></div>
+</sc-if>
+
+<div ref="{{ contactRef }}" style="border-top:1px solid var(--ink,#111);padding:clamp(56px,8vw,96px) 0 48px;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between">
+<div style="flex:1 1 320px;display:flex;flex-direction:column;gap:20px"><span style="font-size:clamp(44px,7vw,96px);font-weight:500;letter-spacing:-.045em;line-height:.95">Let’s connect</span><a href="{{ cv }}" target="_blank" style="align-self:flex-start;background:var(--acc,#c33);color:#fff;padding:14px 22px;font-weight:500">Download CV ↓</a></div>
+<div style="flex:1 1 300px;max-width:520px;display:flex;flex-direction:column">
+<a href="mailto:rowan.grundy@hotmail.co.uk" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:18px 0;border-bottom:1px solid var(--line,#e6e5e2)"><span style="font-size:14px;color:var(--mute,#666)">Email</span><span style="font-size:18px;overflow-wrap:anywhere">rowan.grundy@hotmail.co.uk</span></a>
+<a href="tel:+447810021100" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:18px 0;border-bottom:1px solid var(--line,#e6e5e2)"><span style="font-size:14px;color:var(--mute,#666)">Mobile</span><span style="font-size:18px">+44 7810 021100</span></a></div></div>
+</div>
+</sc-if>
+
+<!-- ============ DIRECTION SWITCHER ============ -->
+<div style="position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:50;display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;justify-content:flex-start;white-space:nowrap;align-items:center;gap:6px;background:#111;color:#f2f1ee;padding:6px;border-radius:14px;font-family:'Geist',sans-serif;font-size:13px;box-shadow:0 10px 40px rgba(0,0,0,.25);max-width:calc(100vw - 24px)">
+<sc-for list="{{ dirs }}" as="d" hint-placeholder-count="5">
+<button onClick="{{ d.pick }}" style="border:0;border-radius:9px;padding:8px 12px;background:{{ d.bg }};color:{{ d.fg }};display:flex;gap:6px;align-items:center"><span style="font-weight:600">{{ d.id }}</span><span>{{ d.label }}</span></button></sc-for>
+<span style="width:1px;height:20px;background:#333;margin:0 4px"></span>
+<button onClick="{{ toggleDark }}" style="border:0;border-radius:9px;padding:8px 12px;background:#222;color:#f2f1ee">{{ darkLabel }}</button>
+</div>
+</div>
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}"><div onClick="{{ lbClose }}" role="dialog" aria-modal="true" aria-label="{{ lbAlt }}" style="font-family:'Geist',sans-serif;position:fixed;inset:0;z-index:10000;background:rgba(10,10,10,.94);display:flex;flex-direction:column;cursor:zoom-out">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px clamp(16px,3vw,32px);color:#f2f1ee;font-size:14px"><span style="opacity:.7">{{ lbAlt }}</span><div style="display:flex;gap:6px;align-items:center"><sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}"><span style="padding:0 10px;font-variant-numeric:tabular-nums;opacity:.7">{{ lbPos }}</span><button onClick="{{ lbPrev }}" aria-label="Previous image" style="width:40px;height:40px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;font-family:inherit;cursor:pointer;font-size:16px">←</button><button onClick="{{ lbNext }}" aria-label="Next image" style="width:40px;height:40px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;font-family:inherit;cursor:pointer;font-size:16px">→</button></sc-if><button onClick="{{ lbClose }}" aria-label="Close" style="width:40px;height:40px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;font-family:inherit;cursor:pointer;font-size:18px">✕</button></div></div>
+<div onTouchStart="{{ lbTs }}" onTouchEnd="{{ lbTe }}" style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 clamp(12px,4vw,64px) clamp(16px,4vw,48px)"><img src="{{ lbSrc }}" alt="{{ lbAlt }}" onClick="{{ lbStop }}" style="max-width:100%;max-height:100%;object-fit:contain;display:block;cursor:default"></div></div></sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const A = 'assets/';
+const CASES = {
+  0: [
+    { k: 'Context', h: 'Crafter Explorer engineer unmanned surface vessels. We designed the app their teams use to skipper them, choosing between levels of automation or full manual control, with course charting, navigation and live data monitoring. The core goal: make dense information easy to reach, and let every operator customise their screen layout to suit their role.' },
+    { k: 'My role', steps: [
+      ['Research', 'Studied vessel navigation best practice and comparable navigation software with the client, adopting strengths and avoiding known weaknesses.'],
+      ['User flows', 'Focused on seamless vessel handovers and intuitive chart alterations, the most critical and time-sensitive tasks.'],
+      ['Wireframes', 'Tested flows and layouts, keeping vast amounts of data and actions just a few clicks away.'],
+      ['Prototyping', 'Prototyped the full application across several client-reviewed iterations, exploring multiple layout variations.']
+    ] },
+    { k: 'Optimised usability', h: 'Dense screens stay clear and usable. Components can float, pin and dock, and layouts can be saved as reusable presets.', imgs: ['2b4b5c9a29cb9f15e867816a4cc6eae708412ca4.png', '132e5a7f9aaf8c31922159de1e50bb9a047bb48b.png'] },
+    { k: 'Total vessel overview and control', h: 'Complex navigational systems translated into clear panels that are quick to understand and learn.', imgs: ['1c2e6ec868f38c385f60054ab4f5dc63a0fb27d7.png', 'a1b82e185eeb9664e697df3186da8086ea63530f.png'] },
+    { k: 'Charting and visual configuration', h: 'Route vessels through chosen waypoints and set navigation to follow them, with intuitive levels of control that respect standard maritime rules.', imgs: ['667babc778097a2bea1e70d7697b0f187dce9d65.png', '268587c8984dbae32db293be9bdcc65478999c53.png'] }
+  ],
+  3: [
+    { k: 'Context', h: 'A startup came to us with a vision for an AI-powered course creation and e-learning platform. Its robust editor lets anyone design courses and quizzes on any subject, then share them through learning portals. Tiered memberships scale from individuals to enterprises.' },
+    { k: 'My role', steps: [
+      ['Research', 'Reviewed competitors to find strengths and gaps, uncovering ways to sharpen features and market position.'],
+      ['User flows', 'Mapped flows for every role (learner, client and admin) for consistent, role-specific navigation.'],
+      ['Wireframes', 'Built low-fidelity mock-ups of key screens once the journey framework was agreed with the client.'],
+      ['Prototyping', 'Delivered functional prototypes for all three roles, refined in weekly client workshops until sign-off.'],
+      ['Branding', 'Rolled the client’s new visual identity out across the whole product after a mid-project rebrand.'],
+      ['Refinement & build', 'Onboarded engineers, guided new requests and QA’d the build against approved designs.']
+    ] },
+    { k: 'Intuitive user journey', h: 'Organisations of any size can create, configure and share courses efficiently, with consistent configuration patterns across courses, quizzes, programmes and portals.', imgs: ['30541b37a5770a76f8dac25c5223f8f43930c7f8.png', '01d4a51f849286165893b5820a972e7d63620e1c.png'] },
+    { k: 'Course, quiz and AI editor', h: 'Full control over content and visual design: set default styles or start from scratch, apply global updates, make page-level tweaks and insert knowledge checks anywhere, with AI prompting built in.', imgs: ['21669aeb6c488dff6891200319c5729e89473916.png', '4d5a6ca190e24ae2d244a0dea69353055d4ad4b3.png', 'daf6decf1d477b94a2945d3372ece269ed13fb03.png', '4878770d137e533d3bb355f400c166f473febc7a.png'] },
+    { k: 'Simple, accessible learner role', h: 'A clean, concise learner journey with built-in accessibility, so assigned programmes can be completed with minimal friction.', imgs: ['e00f67331fcb282df9aa55eeedfb170a08c35ccd.png', '2ca5011f67c97bfd3dd411db3091126840052aaf.png'] }
+  ],
+  4: [
+    { k: 'Context', h: 'A web app for a startup offering cryptocurrency insurance. Users connect multiple wallets, subscribe with crypto or fiat, adjust, renew or cancel cover, monitor wallet activity and submit claims through simple forms.' },
+    { k: 'My role', steps: [
+      ['User flows', 'Mapped the full journey, from varied subscription sign-ups to managing insured wallets.'],
+      ['Wireframes', 'Optimised layouts for mobile and desktop, integrating secure crypto payment options.'],
+      ['Prototyping', 'Prototyped every journey on both devices, covering fiat and crypto payments, renewals, coverage changes and cancellations.'],
+      ['Branding & refinement', 'Built light and dark modes from the brand guidelines and led client workshops to refine the design.']
+    ] },
+    { k: 'Wallet and account overview', h: 'Dashboards build confidence that assets are secure while supporting clear self-monitoring. Outstanding payments and tasks guide users to simple actions without pressure.', imgs: ['b84a4335625311671ae29c219a9a2f8ce75d4f71.png', '148da5f16a3916ca850133a9ebe56665f37160a9.png'] },
+    { k: 'Coverage set-up flows', h: 'Wallet provider login and account selection flow seamlessly into coverage levels and multiple payment methods, including crypto.', imgs: ['e7e15995615cd00be037b0cd4ef03ac5c2bc85c0.png', 'eddcbc04d15b3ac7a506b66cb7e73cae31f76f41.png', '0ebb70271cafd30af314264b3e03d98a980385dc.png'] },
+    { k: 'Usability across devices', h: 'Clear calls to action and consistently presented data on every screen size, for continuous access to account management.', imgs: ['06912ca86586484bb238f8245478f90f6d8a23b8.png'] },
+    { k: 'Branding', h: 'Logos, brand colours and the client’s elephant motif carried throughout, with switchable light and dark themes.', imgs: ['b48e437e84788e438def1dac8ce29dc12e1c150b.png'] }
+  ],
+  1: [
+    { k: 'Context', h: 'A global banking app for businesses and high-net-worth individuals to hold, exchange and transfer across fiat and digital asset accounts with a real-time overview. It scales with teams through roles, permissions and approvals, backed by an admin portal for transactions, accounts, fees, limits and content.' },
+    { k: 'My role', steps: [
+      ['Research', 'Combined client feedback on existing banking services with independent research to set guiding principles.'],
+      ['User flows', 'Optimised key journeys such as account creation, transfers and currency exchange for efficiency and clarity.'],
+      ['Wireframes', 'Defined action and data hierarchies and consistent patterns, testing and refining flows along the way.'],
+      ['Branding', 'Interpreted the existing marketing site and brand guidelines into high-fidelity screens, iterated to approval.'],
+      ['Prototyping', 'Interactive prototypes across every module and screen size, plus a dedicated admin portal prototype.']
+    ] },
+    { k: 'Account usage', h: 'Clear, comprehensive overviews of activity build trust, with simple flows to configure the experience and remove sticking points.', imgs: ['b8e9daebacab17276b267697f97141a342d84017.png', '64d717977ff46ea0e504a2835d7bc76a4a869a82.png'] },
+    { k: 'Exchange flows', h: 'Fewer steps with full control to review and adjust each transaction, and live exchange rates presented clearly.', imgs: ['361483c41a6c66e20897f578edb23a43e7c0a603.png'] },
+    { k: 'Transfer flows', h: 'Single and bulk transfers via account details, saved payees, wallet addresses or platform IDs, all in one smooth journey.', imgs: ['386b0ace5e0eca08550e3c4fb2d64bbc7a603228.png'] },
+    { k: 'Back office & customer service', h: 'Through careful design of the back office and customer service web apps, a drill-down system lets staff explore related clients, transactions and accounts without losing context, and configure fees, limits, content and user requests.', imgs: ['ed800881ca72e1c8609e116f9bdbb5b6c24d9529.png', '192f6b2873ddae5165548cab913cadfda7c15e39.png'] },
+    { k: 'Individual and entity verification', h: 'Guided flows through data-heavy regulatory checks, capturing accurate information aligned with compliance requirements.', imgs: ['bda381bf0a2de96f8b846cd724bd1f06eab3b6d0.png', '81ebbd4b4d2cebe0bb30335d3af89ab5d54610b7.png'] }
+  ],
+  2: [
+    { k: 'Context', h: 'Fire Testing Technology is a world-leading provider of fire safety testing instruments, each running embedded control software. The goal: modernise usability, visual clarity and flows while preserving scientific accuracy, functional depth and strict standards compliance.' },
+    { k: 'My role', steps: [
+      ['User flows', 'Refined validated configuration and testing flows to cut steps and reduce user actions.'],
+      ['Wireframes', 'Introduced layout and sizing refinements and a new navigation architecture, reducing time and click depth.'],
+      ['Branding', 'Replaced unbranded interfaces with a modern branded design, adding light and dark modes and meeting accessibility standards.'],
+      ['Prototyping', 'Built prototypes incrementally with weekly client reviews to ensure standards-driven content was presented accurately.']
+    ] },
+    { k: 'Simplified test flows', h: 'Complex testing workflows made far more intuitive through better layout, sizing, sequencing and a clear information hierarchy.', imgs: ['6bc078a00cd6923f93c03463ce9a4a530c02d5fb.png', '09fabfe5a8b90109154ecf9dee7d29c238433df0.png'] },
+    { k: 'Apparatus configuration', h: 'Used in labs beside hazardous equipment, so clarity and accessibility came first. Data displays filter and customise to surface what matters for each test.', imgs: ['d655e80abfd8b37e299eb420a8200e0683151cd8.png', '234a583525c6a071c70c7b3fd35797addccd46eb.png'] },
+    { k: 'Report configuration', h: 'Restructured into clear, concise sections with full content depth and a new live preview for real-time validation.', imgs: ['9380156ae14236e0429e80c33cc0f3735f1a5eda.png', '9404b7fbcdae62bd4ddb88c83469da27a8ec7ac6.png'] }
+  ],
+  6: [
+    { k: 'Context', h: 'A crypto-based sports betting and casino web app built around frictionless journeys. Users bet on live and virtual sports, track and watch events in real time, deposit and withdraw easily, and enjoy multiple casino providers, rewards and referrals.' },
+    { k: 'My role', steps: [
+      ['Research', 'Analysed the client’s competitor list to define strengths to adopt and weaknesses to avoid.'],
+      ['User flows', 'Focused on the crucial first journey (sign-up, deposit and first bet), balancing familiarity with usability.'],
+      ['Wireframes', 'Tested the journey visually with layouts that perform equally well on every device.'],
+      ['Prototyping', 'Full desktop and mobile prototypes with multiple navigation paths and betting methods.'],
+      ['Branding', 'Applied late-stage brand guidelines across the prototype, with switchable light and dark modes.'],
+      ['Refinement & build', 'Onboarded engineers, guided new requests and QA’d the build against approved designs.']
+    ] },
+    { k: 'Intuitive displays', h: 'Data-rich screens that stay easy to read, so users can navigate, place bets and follow real-time updates in a visually engaging experience.', imgs: ['0f4bf2bc059fbe6b4a76fb419940767346c1a77e.png', '98bee06945173bff19b871f8e02931d3d9b7c0aa.png'] },
+    { k: 'Sign-up and deposit flows', h: 'Critical journeys optimised through detailed flows and wireframes, then validated in interactive prototypes.', imgs: ['42426780f8a07e0ecebe0562f8e7cbfe6b9e24dd.png', 'f17d38ff1945874a81f59e8fb74163a27fedc106.png'] },
+    { k: 'Bet management and history', h: 'A full view of active bets and history with quick actions like cash-out, plus social sharing to drive reach and engagement.', imgs: ['3e8a7127ea8d5335acd44b720694328bf84bbf6d.png', 'e2ac38a149d53d1e2c9edaa7163ad064a7683a83.png'] },
+    { k: 'Referrals and promotions', h: 'Key drivers of engagement, so they were made highly accessible and streamlined within each section.', imgs: ['78ab4996dec6c6ba0a1666138be513356866905d.png', '53782136dc1e7b2a52a487abbc774b7be05d7c78.png'] },
+    { k: 'Incentives and leaderboards', h: 'Tiered rewards and time-limited competitions, placed and styled to maximise visibility and participation.', imgs: ['c052773c5e02e6e42fbff8a6cd6dbce01b6eed42.png', '60a13bb5cc8edccd2f785c37f470d2ecee95d126.png'] }
+  ],
+  5: [
+    { k: 'Context', h: 'An on-demand delivery service fulfilling orders within three hours, offered as a checkout option to challenge next-day courier standards. It needed three experiences: customer tracking, a fast driver app for navigation and handovers, and an admin platform to run operations and logistics.' },
+    { k: 'My role', steps: [
+      ['Research', 'Reviewed traditional courier apps for consumers and drivers to find friction points and benchmark best practice.'],
+      ['User flows', 'Designed minimal-step journeys, especially for driver job acceptance, execution and completion.'],
+      ['Wireframes', 'Set clear information hierarchies for both roles, prioritising critical data and key actions.'],
+      ['Branding', 'Applied brand colours, fonts and logos to key screens, iterating through to client approval.'],
+      ['Prototyping', 'Mapped every delivery stage and system state for consumers and drivers, plus a full admin prototype.'],
+      ['Refinement & build', 'Onboarded engineers, guided new requests and QA’d the build against approved designs.']
+    ] },
+    { k: 'Consumer app', h: 'Track multiple parcels at once with clear location, driver details and ETAs, plus messaging and driver reviews.', imgs: ['e459d9d234b16c820c0fd923d3bff7919ab10929.png', '6a20e7d3422d5cf4a29b3f950ca0388a86d5b1d3.png', '79796a178c5c81093050f4ae5e222603c79350d1.png'] },
+    { k: 'Driver app', h: 'An intuitive job lifecycle from review and acceptance to completion, with in-app navigation, job history and earnings.', imgs: ['28cbe51c2c928e7a7586972337ff2a6e2be9f4a9.png', 'b11a2d164ba043bf353e07350777cad46f57e350.png', 'b945d83c0df4aaefd00e15a8829f5b277c011f16.png'] },
+    { k: 'Branding', h: 'Foundational brand guidelines applied consistently for a modern, cohesive identity across both mobile apps.', imgs: ['a36132553b228dda334207c93789e18e08553a76.png'] },
+    { k: 'Admin web app', h: 'Track deliveries and drivers, automate order bundling and manage retailers, customers, drivers, payments and content in one place.', imgs: ['f610db9443aee1ea774c4f2ae422ef3ee24c12b4.png'] }
+  ],
+  7: [
+    { k: 'Context', h: 'A self-initiated MVP with a former colleague: an AI concierge app for high-net-worth individuals. It learns preferences to recommend events, travel, dining and luxury purchases, and automates bookings so users can focus on the experience. Design is complete and build foundations have begun.' },
+    { k: 'My role', steps: [
+      ['User flows', 'Mapped friction-free ways to navigate, chat with the AI and customise requests and plans.'],
+      ['Wireframes', 'Established the hierarchy of calls to action, data and usability, refining every section and flow.'],
+      ['Brand creation', 'Created a luxury yet modern, tech-forward identity, avoiding “old money” tropes, including the logo.'],
+      ['Prototyping', 'Prototyped every area of the app, exploring complex account, request and chat scenarios.']
+    ] },
+    { k: 'Dashboard and navigation', h: 'AI-driven recommendations based on behaviour and preferences, with the chatbot and key actions always a few taps away.', imgs: ['510229c44b33c6edc3bd3a90c19aa1481bcc2ea4.png', '01ea1c48a1334b679becc0cfd27a77003a9a4969.png', 'a36632331285c3ed31b63ad1b673ff52e8b14d34.png'] },
+    { k: 'AI chatbot', h: 'Create and manage requests with voice input and predictive replies, and get personalised recommendations, bookings and travel planning.', imgs: ['35d87f7a0f1dca68a4ddb7f3fa9b9a46e8ff52b4.png', '024535938c9dd7c0b49f7350ddf4def03571ecf6.png', '42a358104a8cc68708f681e97ee7deefdde6f585.png'] },
+    { k: 'Bookings and schedules', h: 'A central hub for upcoming requests (schedules, destinations, timings and booking details) with integrated calendar views.', imgs: ['ee0152f58b12df161477303d47704093d3bfb6da.png', '9588ba62b5f080aca07dba7c068d7d4fb16f6784.png', '6494ab7299d7135eb4459eb0bf5029cfb8da2332.png'] },
+    { k: 'Profile customisation', h: 'Preferences, interests, documents and associated people let the AI tailor recommendations and book on the user’s behalf.', imgs: ['b471f0685f3817157de0ef7aaa888565096e0d5a.png', '5c489778b2d7190c43494a8566db4acdb6872761.png', '430e9df64429565e04c9b9da931dd7a96816f499.png'] },
+    { k: 'Branding', h: 'Luxurious yet modern colour and type, with an infinity-symbol logo evolved from stylised lowercase “a” and “i” letterforms.', imgs: ['4feb2f2787fee7e7d976fae36582936ee518c316.png'] }
+  ]
+};
+const RAW = [
+  ['Crafter Explorer Technology','Design Lead','2025','Maritime tech','a751917f01ba556167c3cedc8fbfd48ab7dce4fc','Application for real-time command and control, mission planning and data visualization for unmanned surface vessels.'],
+  ['Bloomsbury Money','Design Lead','2025 to present','Fintech · Banking','45aac883a3f52169b6299e1014f8f22c8045587c','Global banking platform for businesses and high net-worth individuals, supporting fiat and crypto accounts, payments and team management.'],
+  ['Fire Testing Technology','Design Lead','2025 to present','Scientific','8a258e5d7ffd8dca41c6cda5ca10945af43b2f27','Applications for fire testing instruments, modernising usability and aesthetics whilst maintaining standardised scientific functionality.'],
+  ['CourseAgent AI','Design Lead','2024 to present','AI · E-learning','eb58a6622b483c0368729751900e41b8d741ea3f','AI-powered learning management system that enables the creation of online courses and quizzes with advanced editing tools.'],
+  ['Blockchain Deposit Insurance Corporation','Design Lead','2025','Fintech · Insurance','61de733f2373579bb17fee6c707966e94ae04295','Web app offering insurance protection for digital asset holders against exchange failures and cyber risks.'],
+  ['Turn Left Now','Design Lead','2024','Retail · Logistics','f34b1a3742112e6b9ffd7b7bd85fe18095b99dc9','On-demand retail delivery platform aiming to support three-hour delivery through an optimized logistics network.'],
+  ['Bitfun','Design Lead','2023–2024','iGaming','4a5b60a01ae0eaf6563be1afb1754864973afa39','Crypto currency based web-app for live and virtual sports betting and casino gaming.'],
+  ['Concierge.Ai','Outside of work project','2025','AI · Lifestyle','4cd27700f6d17b86114b777f4b347813ba1634d3','Mobile app for an AI-powered concierge and personal assistant, supporting luxury lifestyle planning.']
+];
+const HEROES = [
+  'I make complex software feel simple.'
+];
+// [bg, ink, mute, line, surf, acc] light / dark
+const THEMES = {
+  a: [['#fafaf9','#111111','#666561','#e6e5e2','#ecebe8','oklch(0.58 0.2 30)'], ['#0f0f0e','#f2f1ee','#9a9994','#2a2a28','#1b1b1a','oklch(0.7 0.17 30)']],
+  b: [['#f5f1ea','#1d1a16','#6f685d','#d9d2c6','#e9e2d6','#1d1a16'], ['#171513','#efe9df','#a39b8e','#34302a','#24211d','#efe9df']],
+  c: [['#f4f5f3','#111213','#5e6166','#dcdedb','#e7e9e6','oklch(0.55 0.15 135)'], ['#0d0e0f','#ececea','#8b8e92','#222426','#17191a','oklch(0.86 0.18 128)']],
+  d: [['#ffffff','#141414','#666666','#ebebeb','#f1f1f1','oklch(0.52 0.19 262)'], ['#101112','#ededed','#9b9b9b','#26282a','#1c1d1f','oklch(0.74 0.13 262)']],
+  e: [['#efeeea','#141311','#55524c','#d8d5cd','#ffffff','oklch(0.66 0.18 45)'], ['#141311','#efeeea','#a8a49b','#2e2c28','#1f1e1b','oklch(0.68 0.18 45)']],
+  f: [['#f4f4f2','#0c0c0c','#5f5f5f','#dcdcdc','#e6e6e3','oklch(0.66 0.21 38)'], ['#0c0c0c','#f4f4f2','#9a9a9a','#2a2a2a','#1a1a1a','oklch(0.7 0.2 38)']],
+  g: [['#eef0ea','#1f2a24','#56605a','#dde2d9','#ffffff','oklch(0.52 0.09 160)'], ['#141916','#e8ece6','#9aa59e','#28302b','#1d2420','oklch(0.74 0.09 160)']],
+  h: [['#f3f5fa','#0b1020','#5a6378','#dde2ee','#e6eaf4','oklch(0.5 0.15 260)'], ['#0b1020','#e9ecf5','#8a93a8','#232a3d','#141a2e','oklch(0.8 0.1 260)']],
+  i: [['#f7f5f0','#161513','#66625a','#cfc9bd','#ebe7de','oklch(0.5 0.17 28)'], ['#151412','#ece8df','#a49e92','#3a3731','#211f1c','oklch(0.7 0.14 28)']],
+  j: [['#ebebef','#16161a','#62626d','#d6d6de','#ffffff','oklch(0.52 0.2 290)'], ['#0f0f12','#ececf0','#9d9da8','#2a2a31','#1b1b20','oklch(0.66 0.18 290)']],
+  k: null, l: null, m: null, n: null
+};
+THEMES.k = THEMES.a; THEMES.l = THEMES.a; THEMES.m = THEMES.c; THEMES.n = THEMES.c;
+const DIRS = [['k','3a','Swiss feature']];
+const GROUP = ['Industrial','Fintech','Industrial','AI','Fintech','Consumer','Consumer','AI'];
+const FILTERS = ['All','Fintech','AI','Industrial','Consumer'];
+const MOBILE = [5, 7];
+const JSPAN = [2,1,1,2,1,1,1,1];
+const DARK_DEFAULT = { a: false, c: true, k: false, l: false, m: true, n: true };
+const KEY = 'rg-portfolio-v3';
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    let s = {};
+    try { s = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+    const d0 = s.dir || this.props.direction; this.state = { filter: 'All', openRow: 0, dir: 'k', dark: s.dark || {}, hero: 0, page: 'home', idx: 0, hover: null, mx: 0, my: 0 };
+    this.rootRef = React.createRef();
+    this.contactRef = React.createRef();
+    this.hRef = React.createRef();
+    this.flashRef = React.createRef(); this.flashNRef = React.createRef(); this.flashNameRef = React.createRef(); this.flashIdx = 0;
+  }
+  componentDidMount() {
+    this.applyTheme();
+    this.seen = new WeakSet();
+    this.pending = new Set();
+    this.check = () => {
+      {
+        let k = 0; const vh = window.innerHeight || document.documentElement.clientHeight;
+        this.pending.forEach(el => {
+          const a = el.__anim;
+          if (!(a || el.__fx) || !el.isConnected) { this.pending.delete(el); return; }
+          const r = el.getBoundingClientRect();
+          if (r.top < vh || (r.width === 0 && r.height === 0)) {
+            this.pending.delete(el);
+            if (el.__fx) { const f = el.__fx; el.__fx = null; f(); if (!a) return; }
+            if (a.playState === 'paused') { a.effect.updateTiming({ delay: r.bottom < 0 ? 0 : Math.min(k++, 6) * 70 }); a.play(); }
+          }
+        });
+      }
+    };
+    window.addEventListener('scroll', this.check, { passive: true, capture: true });
+    window.addEventListener('resize', this.check);
+    const root = this.rootRef.current, ease = 'cubic-bezier(.2,.7,.1,1)';
+    const zoom = (img, on) => {
+      if (!img || !this.motion()) return;
+      const cur = img.__zoom ? getComputedStyle(img).transform : 'none';
+      img.__zoom && img.__zoom.cancel();
+      img.__zoom = img.animate([{ transform: cur === 'none' ? 'scale(1)' : cur }, { transform: on ? 'scale(1.045)' : 'scale(1)' }], { duration: on ? 700 : 500, easing: ease, fill: 'forwards' });
+    };
+    this.onOver = e => { const a = e.target.closest && e.target.closest('a'); if (!a || a.contains(e.relatedTarget)) return; zoom(a.querySelector('img'), true); };
+    this.onOut = e => { const a = e.target.closest && e.target.closest('a'); if (!a || a.contains(e.relatedTarget)) return; zoom(a.querySelector('img'), false); };
+    root.addEventListener('mouseover', this.onOver);
+    root.addEventListener('mouseout', this.onOut);
+    this.bar = document.createElement('div');
+    Object.assign(this.bar.style, { position: 'fixed', top: 0, left: 0, right: 0, height: '2px', background: 'var(--acc)', transformOrigin: '0 50%', transform: 'scaleX(0)', zIndex: 9999, pointerEvents: 'none' });
+    root.appendChild(this.bar);
+    this.onProg = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      this.bar.style.display = this.motion() && this.state.page === 'case' ? 'block' : 'none';
+      this.bar.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max) : 0})`;
+    };
+    window.addEventListener('scroll', this.onProg, { passive: true });
+    this.onProg();
+    this.onKey = e => { const lb = this.state.lb; if (!lb) return; const n = lb.list.length;
+      if (e.key === 'Escape') this.setState({ lb: null });
+      else if (n > 1 && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) this.setState(s => ({ lb: Object.assign({}, s.lb, { i: (s.lb.i + (e.key === 'ArrowRight' ? 1 : -1) + n) % n }) })); };
+    window.addEventListener('keydown', this.onKey);
+    this.flashBox = this.flashRef.current; this.startFlash();
+    this.animate();
+  }
+  startFlash() {
+    clearTimeout(this.flashT);
+    const box = this.flashRef.current; if (!box) return;
+    const imgs = box.querySelectorAll('img'); if (!imgs.length) return;
+    const show = i => {
+      this.flashIdx = i;
+      imgs.forEach((im, k) => { im.style.opacity = k === i ? 1 : 0; });
+      if (this.flashNRef.current) this.flashNRef.current.textContent = String(i + 1).padStart(2, '0');
+      if (this.flashNameRef.current) this.flashNameRef.current.textContent = imgs[i].alt;
+    };
+    const M = this.motion();
+    if (!M) { show(this.flashIdx); return; }
+    let step = 0;
+    const tick = () => {
+      if (!box.isConnected) return;
+      const i = (this.flashIdx + 1) % imgs.length; show(i);
+      imgs[i].animate([{ transform: 'scale(1.08)', filter: 'contrast(1.25)' }, { transform: 'scale(1)', filter: 'none' }], { duration: 260, easing: 'cubic-bezier(.2,.7,.1,1)' });
+      step++;
+      const burst = step % 10 < 8;
+      this.flashT = setTimeout(tick, burst ? (M.wipe ? 140 : 220) : 1800);
+    };
+    show(this.flashIdx);
+    this.flashT = setTimeout(tick, 900);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onKey);
+    document.documentElement.style.overflow = ''; document.body.style.overflow = '';
+    clearTimeout(this.flashT);
+    window.removeEventListener('scroll', this.check, { capture: true });
+    window.removeEventListener('resize', this.check);
+    window.removeEventListener('scroll', this.onProg);
+    this.bar && this.bar.remove();
+    clearTimeout(this.safety); clearInterval(this.poll);
+    this.pending && this.pending.forEach(el => el.__anim && el.__anim.finish());
+  }
+  motion() {
+    const m = 'Subtle';
+    if (m === 'Off' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
+    return m === 'Subtle' ? { y: 8, dur: 450, wipe: false } : { y: 22, dur: 750, wipe: true };
+  }
+  animate(sceneChanged) {
+    const M = this.motion(), root = this.rootRef.current; if (!M || !root) return;
+    const ease = 'cubic-bezier(.2,.7,.1,1)';
+    if (sceneChanged) root.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 380, easing: ease });
+    root.querySelectorAll('h1,h2,h3,p,li,[data-reveal]').forEach(el => {
+      if (this.seen.has(el) || el.closest('[data-noreveal]') || el.closest('nav')) return;
+      this.seen.add(el);
+      const media = el.tagName === 'IMG' || el.tagName === 'IMAGE-SLOT';
+      const kf = media && M.wipe
+        ? [{ clipPath: 'inset(0 0 100% 0)', transform: 'scale(1.06)' }, { clipPath: 'inset(0 0 0% 0)', transform: 'scale(1)' }]
+        : el.tagName === 'H1' && M.wipe
+        ? [{ opacity: 0, transform: 'translateY(40px) skewY(2deg)', filter: 'blur(8px)' }, { opacity: 1, transform: 'none', filter: 'blur(0)' }]
+        : [{ opacity: 0, transform: `translateY(${M.y}px)` }, { opacity: 1, transform: 'none' }];
+      const a = el.animate(kf, { duration: media ? M.dur * 1.4 : el.tagName === 'H1' ? M.dur * 1.3 : M.dur, easing: ease, fill: 'both' });
+      a.pause(); a.onfinish = () => { a.cancel(); el.__anim = null; }; el.__anim = a;
+      this.pending.add(el);
+    });
+    this.check();
+    if (this.pending.size !== this.lastSize || sceneChanged) {
+      this.lastSize = this.pending.size;
+      requestAnimationFrame(() => this.check());
+      clearInterval(this.poll); let n = 0;
+      this.poll = setInterval(() => { this.check(); if (++n > 15) clearInterval(this.poll); }, 100);
+      if (document.fonts) document.fonts.ready.then(() => this.check());
+      clearTimeout(this.safety);
+      this.safety = setTimeout(() => {
+        this.check();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        this.pending.forEach(el => {
+          if (el.getBoundingClientRect().top >= vh) return;
+          const a = el.__anim, f = el.__fx;
+          if (f) { el.__fx = null; f(); }
+          if (a && a.playState === 'paused') a.finish();
+          this.pending.delete(el);
+        });
+      }, 2500);
+    }
+  }
+  componentDidUpdate(pp, ps) {
+    this.applyTheme();
+    this.onProg && this.onProg();
+    const lock = this.state.lb ? 'hidden' : '';
+    if (this.locked !== lock) { this.locked = lock; document.documentElement.style.overflow = lock; document.body.style.overflow = lock; }
+    if (ps.page !== this.state.page && this.state.lb) this.setState({ lb: null });
+    if (this.flashRef.current !== this.flashBox || pp.motion !== this.props.motion) { this.flashBox = this.flashRef.current; this.startFlash(); }
+    this.animate(ps.dir !== this.state.dir || ps.page !== this.state.page || ps.idx !== this.state.idx || pp.motion !== this.props.motion);
+    const { dir, dark, hero } = this.state;
+    try { localStorage.setItem(KEY, JSON.stringify({ dir, dark, hero })); } catch (e) {}
+  }
+  isDark() { const d = this.state.dark[this.state.dir]; return d ?? true; }
+  applyTheme() {
+    const el = this.rootRef.current; if (!el) return;
+    const t = THEMES[this.state.dir][this.isDark() ? 1 : 0];
+    ['bg','ink','mute','line','surf','acc'].forEach((k, i) => el.style.setProperty('--' + k, t[i]));
+    document.body.style.background = t[0];
+  }
+  go(page, idx) { this.setState({ page, idx: idx ?? this.state.idx, hover: null }); window.scrollTo(0, 0); }
+  renderVals() {
+    const { dir, page, idx, hover, hero } = this.state;
+    const dark = this.isDark();
+    const projects = RAW.map((r, i) => ({
+      n: String(i + 1).padStart(2, '0'), name: r[0], role: r[1], year: r[2], tag: r[3], tagU: r[3].toUpperCase(),
+      img: A + r[4] + '.png', desc: r[5], dirB: i % 2 ? 'row-reverse' : 'row',
+      slug: r[0].toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+      company: i === 7 ? 'Personal project' : 'AVAMAE Software Solutions',
+      dOp: hover === null || hover === i ? 1 : 0.35,
+      fOp: (hover ?? 0) === i ? 1 : 0.32,
+      fit: 'contain', pad: MOBILE.includes(i) ? '5%' : '3%',
+      jSpan: JSPAN[i], jRatio: JSPAN[i] === 2 ? '16/9' : '4/3',
+      open: () => this.go('case', i),
+      enter: () => this.setState({ hover: i }),
+      group: GROUP[i], isOpen: this.state.openRow === i, sign: this.state.openRow === i ? '−' : '+',
+      toggle: () => this.setState(s => ({ openRow: s.openRow === i ? -1 : i }))
+    }));
+    const fProjects = this.state.filter === 'All' ? projects : projects.filter(p => p.group === this.state.filter);
+    const cp = Object.assign({}, projects[idx], { nextName: projects[(idx + 1) % 8].name, next: () => this.go('case', (idx + 1) % 8) });
+    const onWork = page !== 'about';
+    const ink = THEMES[dir][dark ? 1 : 0][1], bg = THEMES[dir][dark ? 1 : 0][0];
+    return {
+      rootRef: this.rootRef, contactRef: this.contactRef,
+      isK: dir === 'k', isL: dir === 'l', isM: dir === 'm', isN: dir === 'n',
+      fProjects, feat: fProjects[0] || projects[0], featRest: fProjects.slice(1), fCount: fProjects.length,
+      filters: FILTERS.map(l => { const on = this.state.filter === l; return { label: l, bg: on ? 'var(--ink)' : 'transparent', fg: on ? 'var(--bg)' : 'inherit', bgM: on ? 'var(--acc)' : 'transparent', fgM: on ? '#0d0e0f' : 'inherit', pick: () => this.setState({ filter: l }) }; }),
+      specs: [{ k: 'ROLE', v: 'UX Designer' }, { k: 'COMPANY', v: 'AVAMAE' }, { k: 'EXPERIENCE', v: '4 YRS' }, { k: 'PROJECTS', v: '25+' }, { k: 'FOCUS', v: 'FINTECH · AI · MARITIME' }],
+      mWork: onWork ? 'var(--surf)' : 'transparent', mAbout: onWork ? 'transparent' : 'var(--surf)',
+      isF: dir === 'f', isG: dir === 'g', isH: dir === 'h', isI: dir === 'i', isJ: dir === 'j',
+      fa: projects[hover ?? 0], lead: projects[0], rest: projects.slice(1), hRef: this.hRef,
+      hPrev: () => this.hRef.current && this.hRef.current.scrollBy({ left: -560, behavior: 'smooth' }),
+      hNext: () => this.hRef.current && this.hRef.current.scrollBy({ left: 560, behavior: 'smooth' }),
+      gWork: onWork ? 'var(--bg)' : 'transparent', gAbout: onWork ? 'transparent' : 'var(--bg)',
+      hoverFit: hover !== null ? projects[hover].fit : 'cover', hoverPad: hover !== null ? projects[hover].pad : '0',
+      isA: dir === 'a', isB: dir === 'b', isC: dir === 'c', isD: dir === 'd', isE: dir === 'e',
+      isHome: page === 'home', isAbout: page === 'about', isCase: page === 'case',
+      flashRef: this.flashRef, flashNRef: this.flashNRef, flashNameRef: this.flashNameRef, flashOpen: () => this.go('case', this.flashIdx),
+      projects, cp, heroText: HEROES[hero], heroNum: hero + 1,
+      ...(() => { const t = HEROES[hero], m = t.match(/^(.*?)(complex\w*)(.*?)(clarity|simple|clear)(.*)$/i); return m ? { heroPre: m[1], heroW1: m[2], heroMid: m[3], heroW2: m[4], heroPost: m[5] } : { heroPre: t, heroW1: '', heroMid: '', heroW2: '', heroPost: '' }; })(),
+      opWork: onWork ? 1 : 0.55, opAbout: onWork ? 0.55 : 1,
+      arrWork: onWork ? '→ ' : '', arrAbout: onWork ? '' : '→ ',
+      pillWork: onWork ? ink : 'transparent', pillWorkInk: onWork ? bg : 'inherit',
+      pillAbout: onWork ? 'transparent' : ink, pillAboutInk: onWork ? 'inherit' : bg,
+      goHome: () => this.go('home'), goAbout: () => this.go('about'),
+      goContact: () => { const el = this.contactRef.current; if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 20, behavior: 'smooth' }); },
+      onMove: (e) => this.setState({ mx: Math.min(e.clientX + 24, window.innerWidth - 380), my: Math.min(e.clientY - 120, window.innerHeight - 260) }),
+      onLeave: () => this.setState({ hover: null }),
+      showPreview: hover !== null && page === 'home', hoverImg: hover !== null ? projects[hover].img : '',
+      mx: this.state.mx, my: this.state.my,
+      photo: A + 'a185fa84ef9956ec56a9c4df3a728e0f03d66730.png',
+      cv: 'https://drive.google.com/file/d/1hI9OQJ02I9uEu6nRdmfWDAXtMQZe5upw/view?usp=sharing',
+      about: [
+        'After graduating from the University of Reading with a BA in Art, I discovered UX design, a field that perfectly blends my passion for technology, psychology, problem-solving and creativity. Through self-teaching and online courses, I built the skills and knowledge needed to transition into the industry.',
+        'Over the past 4 years I have developed experience designing and delivering bespoke, immersive mobile and web applications. I have worked across 25+ projects spanning diverse sectors including fintech, e-learning, travel technology and iGaming. I am confident working across a variety of development environments, from fast-paced startups to long-term product evolution. I lead design efforts and collaborate closely with cross-functional teams to bring user-centred solutions to life.',
+        'Outside of my professional work, I am passionate about sport and maintaining an active lifestyle. I have been a semi-professional rugby player for the past five years, an experience that has strengthened my discipline, resilience and teamwork. Competing at a high level has taught me the value of commitment, continuous improvement and performing under pressure, qualities that also influence the way I approach my work and collaborate with others.'
+      ],
+      timeline: [
+        { n: '01', when: '2022 – now', what: 'UX Designer', where: 'AVAMAE Software Solutions', note: 'Design lead across 25+ projects in fintech, e-learning, travel tech and iGaming' },
+        { n: '02', when: '2021 – now', what: 'Semi-professional rugby', wherePast: 'RAMs RFC & ', where: 'Richmond RFC', note: 'Discipline, resilience and performing under pressure' },
+        { n: '03', when: 'Transition', what: 'Self-taught UX', where: 'Online courses', note: 'Built the skills to move into the industry' },
+        { n: '04', when: 'Education', what: 'BA Art', where: 'University of Reading', note: 'Where the creative foundation started' }
+      ],
+      ...(() => { const lb = this.state.lb; if (!lb) return { lbOpen: false };
+        const n = lb.list.length, mv = d => e => { e && e.stopPropagation(); this.setState(s => ({ lb: Object.assign({}, s.lb, { i: (s.lb.i + d + n) % n }) })); };
+        return { lbOpen: true, lbSrc: lb.list[lb.i], lbAlt: lb.alt, lbMulti: n > 1, lbPos: (lb.i + 1) + ' / ' + n, lbPrev: mv(-1), lbNext: mv(1),
+          lbClose: e => { e && e.stopPropagation(); this.setState({ lb: null }); }, lbStop: e => e.stopPropagation(),
+          lbTs: e => { this.lx = e.touches[0].clientX; }, lbTe: e => { const dx = e.changedTouches[0].clientX - (this.lx ?? 0); if (Math.abs(dx) > 40) mv(dx < 0 ? 1 : -1)(e); } }; })(),
+      openHero: () => this.setState({ lb: { list: [cp.img], i: 0, alt: cp.name } }),
+      caseSections: CASES[idx] ? CASES[idx].map((c, si) => {
+        const key = idx + '-' + si, imgs = (c.imgs || []).map(f => A + f), g = imgs.length ? ((this.state.gal || {})[key] || 0) % imgs.length : 0;
+        const go = d => this.setState(s => ({ gal: Object.assign({}, s.gal, { [key]: (g + d + imgs.length) % imgs.length }) }));
+        return { n: String(si + 1).padStart(2, '0'), k: c.k, h: c.h || '', real: !!c.h, ph: false,
+          hasSteps: !!c.steps, steps: (c.steps || []).map((st, k) => ({ n: String(k + 1).padStart(2, '0'), k: st[0], h: st[1] })),
+          hasImgs: imgs.length > 0, multi: imgs.length > 1, cur: imgs[g] || '', pos: (g + 1) + ' / ' + imgs.length,
+          prev: () => go(-1), next: () => go(1), zoom: () => this.setState({ lb: { list: imgs, i: g, alt: c.k } }),
+          ts: e => { this.tx = e.touches[0].clientX; }, te: e => { const dx = e.changedTouches[0].clientX - (this.tx ?? 0); if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1); } };
+      }) : [
+        { n: '01', k: 'Challenge', kU: 'CHALLENGE', h: 'Add the core problem, who the users are, and the key constraints.', img: 'context / existing product screenshot', ph: true, real: false },
+        { n: '02', k: 'Process', kU: 'PROCESS', h: 'Add research, flows and the key design decisions you made.', img: 'wireframes / user flows', ph: true, real: false },
+        { n: '03', k: 'Outcome', kU: 'OUTCOME', h: 'Add what shipped, plus any results, metrics or feedback.', img: 'final UI screens', ph: true, real: false }
+      ],
+      dirs: DIRS.map(([id, code, label]) => ({ id: code, label, bg: dir === id ? '#f2f1ee' : 'transparent', fg: dir === id ? '#111' : '#bdbcb8', pick: () => this.setState({ dir: id, hover: null }) })),
+      darkLabel: dark ? '☀ Light' : '☾ Dark', dark, light: !dark, darkAria: dark ? 'Switch to light mode' : 'Switch to dark mode',
+      toggleDark: () => this.setState(s => ({ dark: Object.assign({}, s.dark, { [s.dir]: !dark }) })),
+      cycleHero: () => this.setState(s => ({ hero: (s.hero + 1) % HEROES.length }))
+    };
+  }
+}
+</script>
+</body>
+</html>
