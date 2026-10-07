@@ -111,14 +111,6 @@ button{font:inherit;cursor:pointer}
 <a href="tel:+447810021100" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;padding:18px 0;border-bottom:1px solid var(--line,#e6e5e2)"><span style="font-size:14px;color:var(--mute,#666)">Mobile</span><span style="font-size:18px">+44 7810 021100</span></a></div></div>
 </div>
 </sc-if>
-
-<!-- ============ DIRECTION SWITCHER ============ -->
-<div style="position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:50;display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;justify-content:flex-start;white-space:nowrap;align-items:center;gap:6px;background:#111;color:#f2f1ee;padding:6px;border-radius:14px;font-family:'Geist',sans-serif;font-size:13px;box-shadow:0 10px 40px rgba(0,0,0,.25);max-width:calc(100vw - 24px)">
-<sc-for list="{{ dirs }}" as="d" hint-placeholder-count="5">
-<button onClick="{{ d.pick }}" style="border:0;border-radius:9px;padding:8px 12px;background:{{ d.bg }};color:{{ d.fg }};display:flex;gap:6px;align-items:center"><span style="font-weight:600">{{ d.id }}</span><span>{{ d.label }}</span></button></sc-for>
-<span style="width:1px;height:20px;background:#333;margin:0 4px"></span>
-<button onClick="{{ toggleDark }}" style="border:0;border-radius:9px;padding:8px 12px;background:#222;color:#f2f1ee">{{ darkLabel }}</button>
-</div>
 </div>
 <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}"><div onClick="{{ lbClose }}" role="dialog" aria-modal="true" aria-label="{{ lbAlt }}" style="font-family:'Geist',sans-serif;position:fixed;inset:0;z-index:10000;background:rgba(10,10,10,.94);display:flex;flex-direction:column;cursor:zoom-out">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px clamp(16px,3vw,32px);color:#f2f1ee;font-size:14px"><span style="opacity:.7">{{ lbAlt }}</span><div style="display:flex;gap:6px;align-items:center"><sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}"><span style="padding:0 10px;font-variant-numeric:tabular-nums;opacity:.7">{{ lbPos }}</span><button onClick="{{ lbPrev }}" aria-label="Previous image" style="width:40px;height:40px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;font-family:inherit;cursor:pointer;font-size:16px">←</button><button onClick="{{ lbNext }}" aria-label="Next image" style="width:40px;height:40px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;font-family:inherit;cursor:pointer;font-size:16px">→</button></sc-if><button onClick="{{ lbClose }}" aria-label="Close" style="width:40px;height:40px;border:1px solid rgba(255,255,255,.25);background:transparent;color:inherit;font-family:inherit;cursor:pointer;font-size:18px">✕</button></div></div>

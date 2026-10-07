@@ -992,6 +992,7 @@
       }
       componentDidMount() {
         registry.get(this.__name).subs.add(this.__sub);
+        this.__committedState = this.logic.state;
         try {
           this.logic.componentDidMount();
         } catch (e) {
@@ -1009,8 +1010,10 @@
             console.error(e);
           }
         } else {
+          const prevState = this.__committedState || this.logic.state;
+          this.__committedState = this.logic.state;
           try {
-            this.logic.componentDidUpdate(prevProps);
+            this.logic.componentDidUpdate(prevProps, prevState);
           } catch (e) {
             console.error(e);
           }
